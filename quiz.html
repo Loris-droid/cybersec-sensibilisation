@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Cybersécurité</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <img src="assets/logo.png" alt="Logo Cybersécurité">
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="quiz.html">Quiz</a></li>
+                <li><a href="tips.html">Conseils</a></li>
+                <li><a href="phishing-examples.html">Phishing</a></li>
+                <li><a href="resources.html">Ressources</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="quiz-section">
+            <h2>Testez vos connaissances en cybersécurité !</h2>
+            <form id="quizForm">
+                <div class="question">
+                    <p>Que faire si vous recevez un e-mail suspect ?</p>
+                    <input type="radio" name="q1" value="1"> Ignorer l'email<br>
+                    <input type="radio" name="q1" value="2"> Cliquer sur le lien pour vérifier<br>
+                    <input type="radio" name="q1" value="3"> Signaler l'email et ne pas cliquer sur les liens<br>
+                </div>
+                <div class="question">
+                    <p>Quelle est la meilleure pratique pour sécuriser vos comptes ?</p>
+                    <input type="radio" name="q2" value="1"> Utiliser un mot de passe simple<br>
+                    <input type="radio" name="q2" value="2"> Activer l'authentification à deux facteurs<br>
+                    <input type="radio" name="q2" value="3"> Ne jamais changer son mot de passe<br>
+                </div>
+                <button type="submit" class="btn">Soumettre les réponses</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Cybersécurité pour tous</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
