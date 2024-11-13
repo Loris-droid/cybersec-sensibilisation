@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscription - Cybersécurité</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <img src="assets/logo.png" alt="Logo Cybersécurité">
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="quiz.html">Quiz</a></li>
+                <li><a href="tips.html">Conseils</a></li>
+                <li><a href="phishing-examples.html">Phishing</a></li>
+                <li><a href="resources.html">Ressources</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="signup-section">
+            <h2>Inscription</h2>
+            <form id="signupForm">
+                <label for="username">Nom d'utilisateur :</label>
+                <input type="text" id="username" name="username" required><br>
+
+                <label for="password">Mot de passe :</label>
+                <input type="password" id="password" name="password" required><br>
+
+                <label for="confirmPassword">Confirmer le mot de passe :</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" required><br>
+
+                <button type="submit" class="btn">S'inscrire</button>
+            </form>
+
+            <div id="password-strength">
+                <p><strong>Force du mot de passe :</strong> <span id="strength-text">Non évalué</span></p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Cybersécurité pour tous</p>
+    </footer>
+
+    <!-- Inclusion des fichiers JS -->
+    <script src="js/password-check.js"></script>
+    <script src="js/script.js"></script>
+
+    <script>
+        // Ajout d'un écouteur pour la validation du mot de passe
+        document.getElementById("password").addEventListener("input", function() {
+            var password = document.getElementById("password").value;
+            var strength = checkPasswordStrength(password);
+
+            var strengthText = "";
+            switch (strength) {
+                case 0:
+                    strengthText = "Très faible";
+                    break;
+                case 1:
+                    strengthText = "Faible";
+                    break;
+                case 2:
+                    strengthText = "Moyenne";
+                    break;
+                case 3:
+                    strengthText = "Forte";
+                    break;
+                case 4:
+                    strengthText = "Très forte";
+                    break;
+            }
+
+            document.getElementById("strength-text").textContent = strengthText;
+        });
+
+        // Vérification que les mots de passe correspondent
+        document.getElementById("signupForm").addEventListener("submit", function(event) {
+            var password = document.getElementById("password").value;
+            var confirmPassword = document.getElementById("confirmPassword").value;
+
+            if (password !== confirmPassword) {
+                alert("Les mots de passe ne correspondent pas !");
+                event.preventDefault(); // Empêche l'envoi du formulaire
+            }
+        });
+    </script>
+</body>
+</html>
